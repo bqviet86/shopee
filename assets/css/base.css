@@ -1,0 +1,250 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #fc5b3b;
+    --header-height: 120px;
+    --navbar-height: 34.4px;
+    --header__with-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.666667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.333333%;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear .2s;
+    z-index: 100;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    z-index: 100;
+    animation: growth linear .2s;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #444;
+    min-width: 14.4rem;
+    max-width: 15rem;
+    height: 3.6rem;
+    border-radius: .3rem;
+    padding: .4rem .8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: rgba(136, 136, 136, .1);
+}
+
+.btn.btn--normal {
+    background-color: var(--white-color);
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn__social-size--register {
+    font-size: 1.3rem;
+    min-width: 48%;
+    max-width: 48%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn.btn__social-size--login {
+    font-size: 1.4rem;
+    min-width: 32%;
+    max-width: 32%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn.btn__sms-link {
+    background-color: #0f8a0b;
+    color: var(--white-color);
+}
+
+.btn.btn__facebook-link {
+    background-color: #273b6a;
+    color: var(--white-color);
+}
+
+.btn.btn__google-link {
+    background-color: var(--white-color);
+    color: #666;
+}
+
+.btn.btn--disable {
+    background-color: #F9F9F9 !important;
+    cursor: default;
+}
+
+.input-text {
+    padding: 0 1.2rem;
+    border-radius: .3rem;
+    outline: none;
+}
+
+.transition-wrapper:hover .has-transition.transition--opacity-1 {
+    opacity: 1;
+}
+
+.transition-wrapper:hover .has-transition.transition--scale-1 {
+    transform: scale(1);
+}
+
+.transition-wrapper .has-transition.transition--opacity-0 {
+    opacity: 0;
+}
+
+.transition-wrapper .has-transition.transition--scale-0 {
+    transform: scale(0);
+}
+
+.transition-wrapper:hover .has-transition {
+    transition: all ease 0.3s 0.2s;
+    visibility: visible;
+}
+
+.transition-wrapper .has-transition {
+    transition: all ease 0.3s 0.2s;
+
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.pagination-item {
+    list-style: none;
+    margin: 0 12px;
+}
+
+.pagination-item--active .pagination-item__link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background-color: #ff7357;
+}
+
+.pagination-item__link {
+    display: flex;
+    text-decoration: none;
+    min-width: 4rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 2rem;
+    border-radius: .3rem;
+}
+
+.pagination-item__link path {
+    fill: #777;
+}
